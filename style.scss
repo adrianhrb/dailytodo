@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Silkscreen&display=swap');
+$primary: #A5C882;
+$secondary: #D33F49;
+$light: #fff;
+$dark: #000;
+$diabled: #e7e7e7;
+.commonFont{
+    font-weight: bold;
+}
+
+.buttonConf{
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    background-color: $diabled;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 500px;
+    padding: 30px;
+}
+
+#todo {
+    background-color: green;
+    border-radius: 10px;
+    width: auto;
+    padding: 5px;
+    margin: 10px;
+}
+
+
+*:first-letter{
+    text-transform: capitalize;
+}
+
+.roundBorder{
+    border-radius: 5px;
+}
+
+.list {
+    margin: 25px auto;
+    padding: 25px;
+    background-color: $light;
+    width: 100%;
+    max-width: 350px;
+}
+
+.date{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dateRight{
+    display: flex;
+    align-items: center;
+}
+
+#dateNumber{
+    font-size: 50px;
+    @extend .commonFont;
+}
+
+#dateText {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    @extend .commonFont;
+}
+
+#dateMonth {
+    @extend .commonFont;
+}
+
+#dateMonth, #dateYear{
+    margin-left: 7px;
+    font-size: 20px;
+}
+
+form{
+    margin: 20px 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto 50px auto;
+    grid-column-gap: 15px;
+}
+
+input{
+    border: none;
+    padding-left: 10px;
+    background-color: $diabled;
+    &:focus{
+        outline: none;
+    }
+}
+
+.addTaskButton{
+    height: 35px;
+    border-radius: 50%;
+    font-size: 18px;
+    background-color: $diabled;
+    @extend .buttonConf;
+}
+
+.orderButton{
+    background-color: $secondary;
+    color: $light;
+    @extend .buttonConf;
+}
+
+.task{
+    background-color: $primary;
+    padding: 15px;
+    margin-top: 15px;
+    color: $light;
+    cursor: pointer;
+}
+
+.done{
+    background-color: $diabled;
+    text-decoration: line-through;
+    color: $dark;
+}
+
+
