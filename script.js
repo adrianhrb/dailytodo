@@ -25,8 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function changeTaskStatus(e){
         if (e.target.id == 'done'){
             e.target.id = 'todo'
+            newTask.style.backgroundColor = green
         } else {
             e.target.id = 'done'
+            newTask.style.backgroundColor = gray
         }
     }
 
@@ -55,9 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const time = document.querySelector('#time').value
         const newTask = document.createElement('div')
         const editTask = document.createElement('button')
+        const editHour = document.createElement('button')
+        const changeColor = document.createElement('button')
+        changeColor.type = 'button'
+        changeColor.textContent = 'Color'
+        changeColor.id = 'edit'
         editTask.type = 'button'
         editTask.textContent = 'Edit'
         editTask.id = 'edit'
+        editHour.type = 'button'
+        editHour.textContent = 'Hour'
+        editHour.id = 'edit'
         newTask.classList.add('task')
         newTask.id = 'todo'
         editTask.addEventListener('click', () => {
@@ -66,10 +76,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 newTask.textContent = time + ' - ' + newText
             }
         })
-        newTask.addEventListener('click', changeTaskStatus)
+        editHour.addEventListener('click', () => {
+            const newHour = prompt('Qué nueva hora quieres indicar (Ej: 12:20):')
+            const taskText = newTask.textContent.split('-')[1]
+            newTask.textContent = newHour + ' - ' + taskText
+        })
+        changeColor.addEventListener('click', () => {
+            const newColor = prompt('What color you want to apply? (Hex or normal color):')
+            newTask.style.backgroundColor = newColor
+        })
+        newTask.addEventListener('click', () => {
+            if (newTask.id == 'done'){
+                newTask.id = 'todo'
+                newTask.style.backgroundColor = 'green'
+            } else {
+                newTask.id = 'done'
+                newTask.style.backgroundColor = 'gray'
+            }
+        })
         newTask.textContent = time + ' - ' + value
         holeDiv.appendChild(newTask)
         holeDiv.appendChild(editTask)
+        holeDiv.appendChild(editHour)
+        holeDiv.appendChild(changeColor)
         main.prepend(holeDiv)
         e.target.reset()
     })

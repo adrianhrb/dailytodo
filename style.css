@@ -31,6 +31,7 @@ body {
   margin: 10px;
   text-align: center;
   position: relative;
+  color: #333333;
 }
 #todo .taskTime {
   position: absolute;
@@ -97,10 +98,11 @@ input:focus {
 
 .addTaskButton {
   height: 35px;
-  width: 150px;
+  width: 80px;
   border-radius: 50%;
   font-size: 18px;
   background-color: #e7e7e7;
+  margin-left: 10px;
 }
 
 .orderButton {
@@ -136,6 +138,7 @@ input:focus {
   padding: 5px;
   margin: 10px;
   text-align: center;
+  color: black;
 }
 
 #time {
@@ -156,4 +159,5 @@ input:focus {
 .hole {
   display: flex;
   flex-direction: row;
+  gap: 10px;
 }/*# sourceMappingURL=style.css.map */
