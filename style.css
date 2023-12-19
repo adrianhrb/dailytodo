@@ -26,10 +26,15 @@ body {
 #todo {
   background-color: green;
   border-radius: 10px;
-  width: auto;
+  width: 400px;
   padding: 5px;
   margin: 10px;
   text-align: center;
+  position: relative;
+}
+#todo .taskTime {
+  position: absolute;
+  left: -1000px;
 }
 
 *:first-letter {
@@ -78,7 +83,7 @@ form {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: auto 50px auto;
-  grid-column-gap: 15px;
+  grid-column-gap: 5px;
 }
 
 input {
@@ -92,6 +97,7 @@ input:focus {
 
 .addTaskButton {
   height: 35px;
+  width: 150px;
   border-radius: 50%;
   font-size: 18px;
   background-color: #e7e7e7;
@@ -110,12 +116,44 @@ input:focus {
   cursor: pointer;
 }
 
+.taskText {
+  width: 100px;
+}
+
+#taskContainer {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 #done {
   background-color: gray;
   text-decoration: line-through;
   border-radius: 10px;
-  width: auto;
+  width: 400px;
   padding: 5px;
   margin: 10px;
   text-align: center;
+}
+
+#time {
+  width: 100px;
+}
+
+#edit {
+  height: 30px;
+  width: 50px;
+  color: #fff;
+  background-color: #D33F49;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 9px;
+}
+
+.hole {
+  display: flex;
+  flex-direction: row;
 }/*# sourceMappingURL=style.css.map */

@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function changeTaskStatus(e){
-        e.target.classList.toggle('done');
         if (e.target.id == 'done'){
             e.target.id = 'todo'
         } else {
@@ -34,11 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const order = () => {
         const done = [];
         const toDo = [];
-        main.childNodes.forEach(task => {
-            task.classList.contains('done')?done.push(task):toDo.push(task)
-        })
-        return [...toDo,...done];
-    }
+        main.childNodes.forEach((task) => {
+            const taskContent = task.querySelector('.task');
+            taskContent.id == 'done' ? done.push(task) : toDo.push(task);
+        });
+        return [...toDo, ...done];
+    };
 
     const renderOrderedTasks = () => {
         order().forEach(task => main.appendChild(task))
@@ -50,12 +50,27 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const value = document.querySelector('#taskText').value;
         if (!value) return;
+        const holeDiv = document.createElement('div')
+        holeDiv.classList = 'hole'
+        const time = document.querySelector('#time').value
         const newTask = document.createElement('div')
-        newTask.class = 'roundBorder todo'
+        const editTask = document.createElement('button')
+        editTask.type = 'button'
+        editTask.textContent = 'Edit'
+        editTask.id = 'edit'
+        newTask.classList.add('task')
         newTask.id = 'todo'
+        editTask.addEventListener('click', () => {
+            const newText = prompt('Edit task:')
+            if (newText !== null){
+                newTask.textContent = time + ' - ' + newText
+            }
+        })
         newTask.addEventListener('click', changeTaskStatus)
-        newTask.textContent = value
-        main.prepend(newTask)
+        newTask.textContent = time + ' - ' + value
+        holeDiv.appendChild(newTask)
+        holeDiv.appendChild(editTask)
+        main.prepend(holeDiv)
         e.target.reset()
     })
 
