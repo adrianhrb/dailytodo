@@ -110,10 +110,9 @@ input:focus {
   cursor: pointer;
 }
 
-.done {
+#done {
   background-color: gray;
   text-decoration: line-through;
-  color: #000;
   border-radius: 10px;
   width: auto;
   padding: 5px;

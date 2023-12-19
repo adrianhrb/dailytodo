@@ -24,7 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function changeTaskStatus(e){
         e.target.classList.toggle('done');
-        e.target.id = 'done'
+        if (e.target.id == 'done'){
+            e.target.id = 'todo'
+        } else {
+            e.target.id = 'done'
+        }
     }
 
     const order = () => {

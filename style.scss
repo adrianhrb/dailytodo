@@ -34,6 +34,7 @@ body {
     width: auto;
     padding: 5px;
     margin: 10px;
+    text-align: center;
 }
 
 
@@ -123,10 +124,14 @@ input{
     cursor: pointer;
 }
 
-.done{
-    background-color: $diabled;
+#done{
+    background-color: gray;
     text-decoration: line-through;
-    color: $dark;
+    border-radius: 10px;
+    width: auto;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
 }
 
 
